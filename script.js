@@ -1,16 +1,29 @@
-var countDown = 15;
+function texts() {
+  let pri = document.getElementById("primitive");
+  let ddd = document.getElementById("ddd");
+  if ((pri.style.display = "none")) {
+    ddd.style.display = "block";
+  } else if ((pri.style.display = "block")) {
+    ddd.style.display = "none";
+  }
+}
 
 function counter() {
   const seconds = document.getElementById("demo");
-  let pri = document.getElementById("primitive");
-  let count = 15;
-  let x = setInterval(function () {
+
+  var count = 15;
+  let x = setInterval(timeInterval, 1000);
+
+  function timeInterval() {
+    document.getElementById("ddd").style.display = "none";
     count -= 1;
-    if (count === 0) {
+    if (count === 10) {
       clearInterval(x);
+      texts();
     }
+
     seconds.textContent = count;
-  }, 1000);
+  }
 }
 
 counter();
