@@ -4,40 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
     <title>Questions & Answers</title>
   </head>
   <body>
     <div id="demo"></div>
     <p>Session Time</p>
-    <div>
-      <form id="primitive">
-        <p>What are the primitive datatypes?</p>
-        <input type="radio" />   <label for="string">string</label><br />
-        <input type="radio" />   <label for="number">number</label><br />
-        <input type="radio" />
-          <label for="boolean">boolean</label><br />
-        <input type="radio" />
-          <label for="undefined">undefined</label><br />
-        <input type="radio" />
-          <label for="null">null</label><br />
-        <input type="radio" />
-          <label for="all">all</label><br />
-      </form>
-
-      <form id="ddd">
-        <p>What are ddd?</p>
-        <input type="radio" />   <label for="string">string</label><br />
-        <input type="radio" />   <label for="number">number</label><br />
-        <input type="radio" />
-          <label for="boolean">boolean</label><br />
-        <input type="radio" />
-          <label for="undefined">undefined</label><br />
-        <input type="radio" />
-          <label for="null">null</label><br />
-        <input type="radio" />
-          <label for="all">all</label><br />
-      </form>
-    </div>
-    <script src="./script.js"></script>
+    <div id="text"></div>
+    <!-- <div id="primitives">
+      <p class="class1">
+        What are the primitive datatypes?
+      </p>
+      <input type="radio" class="class1" /> String<br />
+      <input type="radio" class="class1" /> Number<br />
+      <input type="radio" class="class1" onload="texts(this)" /> Boolean<br />
+      <input type="radio" class="class1" onload="texts(this)" />
+      Undefined<br />
+      <input type="radio" class="class1" onload="texts(this)" /> Null<br />
+      <input type="radio" class="class1" onload="texts(this)" /> All the
+      above<br />
+    </div> -->
+    <!-- <div id="variables">
+      <p class="class2" onload="texts(this)">
+        Which of the following is true about variable naming conventions in
+        JavaScript?
+      </p>
+      <input type="radio" class="class2" onload="texts(this)" /> JavaScript
+      variable names must begin with a letter or the underscore character.
+      <br />
+      <input type="radio" class="class2" onload="texts(this)" />
+      JavaScript variable names are case sensitive.<br />
+      <input type="radio" class="class2" onload="texts(this)" />
+      Both of the above.<br />
+      <input type="radio" class="class2" onload="texts(this)" />
+      None of the above.<br />
+    </div> -->
+    <script src="./script1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </body>
 </html>
