@@ -1,6 +1,6 @@
 var questions = [
   {
-    title: "Commonly used data types is JS:",
+    title: "Commonly used data types in JS:",
     choices: ["String, Boolean", "Number, Undefined", "Null", "All the above"],
     answer: "All the above",
   },
@@ -71,7 +71,7 @@ var questions = [
     answer: "Ignores the statements",
   },
   {
-    title: "avascript is an _______ language?",
+    title: "Javascript is an _______ language?",
     choices: [
       "Object-Oriented",
       "Object-Based",
