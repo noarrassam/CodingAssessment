@@ -54,9 +54,31 @@ var questions = [
     answer: "Both the datatype and the result of the expression are compared",
   },
   {
-    title: "What keyword is used to check whether a given property is valid or not?",
+    title:
+      "What keyword is used to check whether a given property is valid or not?",
     choices: ["in", "is in", "exists", "lies"],
     answer: "in",
+  },
+  {
+    title:
+      "Upon encountering empty statements, what does the Javascript Interpreter do?",
+    choices: [
+      "Throws an error",
+      "Ignores the statements",
+      "Gives a warning",
+      "None of the above",
+    ],
+    answer: "Ignores the statements",
+  },
+  {
+    title: "avascript is an _______ language?",
+    choices: [
+      "Object-Oriented",
+      "Object-Based",
+      "Procedural",
+      "None of the above",
+    ],
+    answer: "Object-Oriented",
   },
 ];
 

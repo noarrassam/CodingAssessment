@@ -1,5 +1,4 @@
 import { questions } from "./questions.js";
-import { initScore } from "./initScore.js";
 
 var entry = document.getElementById("questionParagraph");
 var rdo = document.getElementById("questionDiv");
@@ -12,125 +11,139 @@ var labelElements = document.querySelectorAll("label");
 var arrays = [];
 var counter = 0;
 var key = 0;
-var count = 15;
-var x;
+var count = 60;
+var intrvl;
 
 function interval() {
   count -= 1;
-  if (count > 10) {
-    allQuestions();
-  } else {
-    clearInterval(x);
-    var i;
-
-    for (i = 0; i < inputElements.length; i++) {
-      if (inputElements.length > 0) {
-        inputElements[i].remove();
-        // labelElements[i].remove();
-      }
-    }
-
-    var btnID = document.getElementById("submitBtn");
-    btnID.remove();
-
-    document.querySelector("#questionDiv").children[0].innerHTML =
-      "Times up, Please Fill up the Below:";
-
-    let textFieldInit = document.createElement("input");
-    textFieldInit.type = "text";
-    textFieldInit.id = "initials";
-
-    document.querySelector("#questionDiv").children[1].innerHTML =
-      "Enter your Init";
-
-    document.querySelector("#questionDiv").children[3].innerHTML = "";
-
-    document
-      .querySelector("#questionDiv")
-      .children[3].appendChild(textFieldInit);
-
-    document.querySelector("#questionDiv").children[5].innerHTML =
-      "Enter your Score";
-
-    let textFieldScore = document.createElement("input");
-    textFieldScore.type = "text";
-    textFieldScore.id = "scores";
-
-    document.querySelector("#questionDiv").children[7].innerHTML = "";
-
-    document
-      .querySelector("#questionDiv")
-      .children[7].appendChild(textFieldScore);
-
-    let br = document.createElement("br");
-    document.body.appendChild(br);
-
-    let submit = document.createElement("input");
-    submit.type = "submit";
-    submit.value = "Submit";
-    submit.id = "btnInsert";
-
-    document.body.appendChild(submit);
-
-    let br1 = document.createElement("br");
-    document.body.appendChild(br1);
-
-    let br2 = document.createElement("br");
-    document.body.appendChild(br2);
-
-    let output = document.createElement("fieldset");
-    output.id = "lsOutput";
-    document.body.appendChild(output);
-    console.log(output);
-    let xe = document.createElement("legend");
-    var t = document.createTextNode("Insert Data");
-    xe.appendChild(t);
-    document.getElementById("lsOutput").appendChild(xe);
-    let div = document.createElement("div");
-    div.id = "output";
-    document.getElementById("lsOutput").appendChild(div);
-
-    const initials = document.getElementById("initials");
-    const scores = document.getElementById("scores");
-    const btnInsert = document.getElementById("btnInsert");
-    const AllOutput = document.getElementById("output");
-
-    btnInsert.onclick = function () {
-      const key = initials.value;
-      const value = scores.value;
-
-      if (key && value) {
-        localStorage.setItem(key, value);
-        location.reload();
-      }
-
-      console.log(key);
-      console.log(value);
-    };
-    for (let i = 0; i < localStorage.length; i++) {
-      let key = localStorage.key(i);
-      let val = localStorage.getItem(key);
-      AllOutput.innerHTML += `${key}: ${val}<br />`;
-    }
+  if (count < 1) {
+    clearInterval(intrvl);
+    initScore();
   }
   seconds.innerHTML = count;
 }
 
 function counterTime() {
-  x = setInterval(interval, 1000);
+  intrvl = setInterval(interval, 1000);
+}
+
+function initScore() {
+  for (var i = 0; i < inputElements.length; i++) {
+    if (inputElements.length > 0) {
+      inputElements[i].remove();
+      // labelElements[i].remove();
+    }
+  }
+
+  var btnID = document.getElementById("submitBtn");
+  //if (btnID.length > 0) {
+  btnID.remove();
+  //}
+
+  if (count == 0) {
+    document.querySelector("#questionDiv").children[0].innerHTML =
+      `Times Up!` +
+      `<br /> <br />` +
+      `Your Score is ${counter}/10` +
+      `<br /> <br />` +
+      "Please Fill up the Below:";
+  } else {
+    document.querySelector("#questionDiv").children[0].innerHTML =
+      `You have completed your Exam in ${count} Seconds` +
+      `<br /> <br />` +
+      `Your Score is ${counter}/10` +
+      `<br /> <br />` +
+      "Please Fill up the Below:";
+  }
+
+  let textFieldInit = document.createElement("input");
+  textFieldInit.type = "text";
+  textFieldInit.id = "initials";
+
+  document.querySelector("#questionDiv").children[1].innerHTML =
+    "Enter your Initial";
+
+  document.querySelector("#questionDiv").children[3].innerHTML = "";
+
+  document.querySelector("#questionDiv").children[3].appendChild(textFieldInit);
+
+  document.querySelector("#questionDiv").children[5].innerHTML =
+    "Enter your Score";
+
+  let textFieldScore = document.createElement("input");
+  textFieldScore.type = "text";
+  textFieldScore.id = "scores";
+
+  document.querySelector("#questionDiv").children[7].innerHTML = "";
+
+  document
+    .querySelector("#questionDiv")
+    .children[7].appendChild(textFieldScore);
+
+  let br = document.createElement("br");
+  document.body.appendChild(br);
+
+  let submit = document.createElement("input");
+  submit.type = "submit";
+  submit.value = "Submit";
+  submit.id = "btnInsert";
+
+  document.body.appendChild(submit);
+
+  let br1 = document.createElement("br");
+  document.body.appendChild(br1);
+
+  let br2 = document.createElement("br");
+  document.body.appendChild(br2);
+
+  let output = document.createElement("fieldset");
+  output.id = "lsOutput";
+  document.body.appendChild(output);
+  console.log(output);
+  let leg = document.createElement("legend");
+  var t = document.createTextNode("Insert Data");
+  leg.appendChild(t);
+  document.getElementById("lsOutput").appendChild(leg);
+  let div = document.createElement("div");
+  div.id = "output";
+  document.getElementById("lsOutput").appendChild(div);
+
+  const initials = document.getElementById("initials");
+  const scores = document.getElementById("scores");
+  const btnInsert = document.getElementById("btnInsert");
+  const AllOutput = document.getElementById("output");
+
+  btnInsert.addEventListener("click", function () {
+    const key = initials.value;
+    const value = scores.value;
+
+    if (key && value) {
+      localStorage.setItem(key, value);
+      location.reload();
+    }
+
+    console.log(key);
+    console.log(value);
+  });
+
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    let val = localStorage.getItem(key);
+    AllOutput.innerHTML += `${key}: ${val}<br />`;
+  }
 }
 
 function allQuestions() {
   let question = questions[key];
-  console.log(question);
+  //console.log(question);
   switch (question) {
     case questions[0]:
-      console.log(key);
+      //console.log(key);
       entry.innerHTML = questions[key].title;
       clearRdoButton();
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -138,9 +151,9 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
@@ -306,7 +319,6 @@ function allQuestions() {
           inputs[i].value = questions[key].answer;
         }
       }
-
       break;
     case questions[7]:
       console.log(key);
@@ -331,7 +343,92 @@ function allQuestions() {
         }
       }
       break;
+    case questions[8]:
+      console.log(key);
+      clearRdoButton();
+      arrays = [];
+      entry.innerHTML = questions[key].title;
+      for (let arr in questions[key].choices) {
+        arrays.push(questions[key].choices[arr]);
+        console.log(arrays);
+      }
+
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].innerHTML = arrays[i];
+        inputs[i].id = "rd";
+        let id = document.getElementById("rd");
+        id.checked = true;
+        console.log(inputs[i]);
+        labels[i].innerHTML = arrays[i];
+        console.log(labels[i]);
+        if (labels[i].innerHTML == questions[key].answer) {
+          inputs[i].value = questions[key].answer;
+        }
+      }
+      break;
+    case questions[9]:
+      console.log(key);
+      clearRdoButton();
+      arrays = [];
+      entry.innerHTML = questions[key].title;
+      for (let arr in questions[key].choices) {
+        arrays.push(questions[key].choices[arr]);
+        console.log(arrays);
+      }
+
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].innerHTML = arrays[i];
+        inputs[i].id = "rd";
+        let id = document.getElementById("rd");
+        id.checked = true;
+        console.log(inputs[i]);
+        labels[i].innerHTML = arrays[i];
+        console.log(labels[i]);
+        if (labels[i].innerHTML == questions[key].answer) {
+          inputs[i].value = questions[key].answer;
+        }
+      }
+      break;
+    default:
+      clearInterval(intrvl);
+      initScore();
   }
+}
+
+function startButton() {
+  let para = document.createElement("p");
+  para.innerHTML = "Press Start to Start the Quiz";
+  document.body.appendChild(para);
+
+  let start = document.createElement("input");
+  start.type = "submit";
+  start.id = "start";
+  start.value = "Start";
+  document.body.appendChild(start);
+  let session = document.getElementById("session");
+
+  for (var i = 0; i < inputElements.length; i++) {
+    if (inputElements.length > 0) {
+      inputElements[i].style.visibility = "hidden";
+    }
+  }
+
+  session.style.visibility = "hidden";
+
+  let startButton = document.getElementById("start");
+  startButton.addEventListener("click", function () {
+    for (var i = 0; i < inputElements.length; i++) {
+      if (inputElements.length > 0) {
+        inputElements[i].style.visibility = "visible";
+      }
+    }
+    session.style.visibility = "visible";
+    para.remove();
+    start.remove();
+    allQuestions();
+    counterTime();
+    submitBtn();
+  });
 }
 
 function clearRdoButton() {
@@ -368,5 +465,4 @@ function submitBtn() {
   });
 }
 
-counterTime();
-submitBtn();
+startButton();
