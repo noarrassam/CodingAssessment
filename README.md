@@ -28,6 +28,6 @@ It is an MCQs Quiz app that allows users to take a JS Quiz within a specified pe
 
 ![![Score]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/3.png)
 
-## **Final Score - Other User**
+## **Final Score - New User**
 
 ![![Portfolio]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/4.png)
