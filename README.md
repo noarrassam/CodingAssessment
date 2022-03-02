@@ -16,22 +16,18 @@ It is an MCQs Quiz app that allows users to take a JS Quiz within a specified pe
 
 - Localstorage
 
-## **Home Page**
+## **Start Assessment**
 
-![![Home]()](https://github.com/noarrassam/Portfolio/blob/master/images/Screenshots/Home.png)
+![![Start]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/1.png)
 
-## **Experience**
+## **MCQs**
 
-![![Experience]()](https://github.com/noarrassam/Portfolio/blob/master/images/Screenshots/Experience.png)
+![![MCQs]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/2.png)
 
-## **Education**
+## **Final Score**
 
-![![Education]()](https://github.com/noarrassam/Portfolio/blob/master/images/Screenshots/Education.png)
+![![Score]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/3.png)
 
-## **Portfolio**
+## **Final Score - Other User**
 
-![![Portfolio]()](https://github.com/noarrassam/Portfolio/blob/master/images/Screenshots/Portfolio.png)
-
-## **Contact**
-
-![![Contact]()](https://github.com/noarrassam/Portfolio/blob/master/images/Screenshots/Contact.png)
+![![Portfolio]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/4.png)
