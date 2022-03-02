@@ -9,7 +9,7 @@ var inputElements = document.querySelectorAll("input");
 //var labelElements = document.querySelectorAll("label");
 
 var arrays = [];
-var counter = 1;
+var counter = 0;
 var key = 0;
 var count = 60;
 var intrvl;
@@ -145,12 +145,12 @@ function allQuestions() {
   //console.log(question);
   switch (question) {
     case questions[0]:
-      console.log(key);
+      //console.log(key);
       entry.innerHTML = questions[key].title;
       clearRdoButton();
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -162,22 +162,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[1]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -189,22 +189,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[2]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -216,22 +216,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[3]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -243,22 +243,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[4]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -270,22 +270,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[5]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -297,22 +297,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[5]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -324,22 +324,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[6]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -351,22 +351,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[7]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -378,22 +378,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[8]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -405,22 +405,22 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
       }
       break;
     case questions[9]:
-      console.log(key);
+      //console.log(key);
       clearRdoButton();
       arrays = [];
       entry.innerHTML = questions[key].title;
       for (let arr in questions[key].choices) {
         arrays.push(questions[key].choices[arr]);
-        console.log(arrays);
+        //console.log(arrays);
       }
 
       for (var i = 0; i < inputs.length; i++) {
@@ -432,9 +432,9 @@ function allQuestions() {
         inputs[i].id = "rd";
         let id = document.getElementById("rd");
         id.checked = true;
-        console.log(inputs[i]);
+        //console.log(inputs[i]);
         labels[i].innerHTML = arrays[i];
-        console.log(labels[i]);
+        //console.log(labels[i]);
         if (labels[i].innerHTML == questions[key].answer) {
           inputs[i].value = questions[key].answer;
         }
@@ -501,14 +501,15 @@ function submitBtn() {
       if (inputs[i].value == labels[i].innerHTML) {
         if (inputs[i].checked) {
           //alert("Correct");
-          key++;
-          allQuestions();
           //console.log(key);
           counter++;
+          key++;
+          allQuestions();
           //console.log(counter);
           break;
         } else {
           //alert("Wrong Answer");
+          counter = 0;
           key++;
           allQuestions();
           break;
