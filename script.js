@@ -509,7 +509,7 @@ function submitBtn() {
           break;
         } else {
           //alert("Wrong Answer");
-          counter = 0;
+          counter += 0;
           key++;
           allQuestions();
           break;
