@@ -75,9 +75,10 @@ function initScore() {
   document.querySelector("#questionDiv").children[3].appendChild(textFieldInit);
 
   document.querySelector("#questionDiv").children[5].innerHTML =
-    "Enter your Score";
+    "Your Score is:";
 
-  let textFieldScore = document.createElement("input");
+  let textFieldScore = document.createElement("label");
+  textFieldScore.innerHTML = counter;
   textFieldScore.type = "text";
   textFieldScore.id = "scores";
 
@@ -116,19 +117,18 @@ function initScore() {
   document.getElementById("lsOutput").appendChild(div);
 
   const initials = document.getElementById("initials");
-  const scores = document.getElementById("scores");
+  //const scores = document.getElementById("scores");
   const btnInsert = document.getElementById("btnInsert");
   const AllOutput = document.getElementById("output");
 
   btnInsert.addEventListener("click", function () {
     const key = initials.value;
-    const value = scores.value;
+    const value = counter;
 
     if (key && value) {
       localStorage.setItem(key, value);
       location.reload();
     }
-
     //console.log(key);
     //console.log(value);
   });
@@ -142,307 +142,25 @@ function initScore() {
 
 function allQuestions() {
   let question = questions[key];
-  //console.log(question);
-  switch (question) {
-    case questions[0]:
-      //console.log(key);
+  if (question) {
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].value = "";
+      inputs[i].id = "rd";
+      let id = document.getElementById("rd");
+      id.checked = true;
+      console.log(inputs[i]);
+      console.log(key);
+      labels[i].innerHTML = questions[key].choices[i];
+      console.log(questions[key].choices[i]);
       entry.innerHTML = questions[key].title;
       clearRdoButton();
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
+      if (labels[i].innerHTML == questions[key].answer) {
+        inputs[i].value = questions[key].answer;
       }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[1]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[2]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[3]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[4]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[5]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[5]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[6]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[7]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[8]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    case questions[9]:
-      //console.log(key);
-      clearRdoButton();
-      arrays = [];
-      entry.innerHTML = questions[key].title;
-      for (let arr in questions[key].choices) {
-        arrays.push(questions[key].choices[arr]);
-        //console.log(arrays);
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-      }
-
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = arrays[i];
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        labels[i].innerHTML = arrays[i];
-        //console.log(labels[i]);
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
-      }
-      break;
-    default:
-      clearInterval(intrvl);
-      initScore();
+    }
+  } else {
+    clearInterval(intrvl);
+    initScore();
   }
 }
 
@@ -493,6 +211,7 @@ function submitBtn() {
   var submitBtn = document.createElement("input");
   submitBtn.type = "submit";
   submitBtn.id = "submitBtn";
+  submitBtn.value = "Next";
   document.body.appendChild(submitBtn);
 
   var button = document.getElementById("submitBtn");
