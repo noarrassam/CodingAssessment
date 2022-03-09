@@ -24,10 +24,14 @@ It is an MCQs Quiz app that allows users to take a JS Quiz within a specified pe
 
 ![![MCQs]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/2.png)
 
-## **Final Score**
+## **Wrong Answer Alert**
 
 ![![Score]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/3.png)
 
-## **Final Score - New User**
+## **Correct Answer Alert**
 
 ![![Portfolio]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/4.png)
+
+## **Final Score**
+
+![![Portfolio]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/5.png)
