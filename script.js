@@ -8,7 +8,7 @@ var seconds = document.getElementById("demo");
 var inputElements = document.querySelectorAll("input");
 //var labelElements = document.querySelectorAll("label");
 
-var arrays = [];
+//var arrays = [];
 var counter = 0;
 var key = 0;
 var count = 60;
@@ -148,10 +148,10 @@ function allQuestions() {
       inputs[i].id = "rd";
       let id = document.getElementById("rd");
       id.checked = true;
-      console.log(inputs[i]);
-      console.log(key);
+      //console.log(inputs[i]);
+      //console.log(key);
       labels[i].innerHTML = questions[key].choices[i];
-      console.log(questions[key].choices[i]);
+      //console.log(questions[key].choices[i]);
       entry.innerHTML = questions[key].title;
       clearRdoButton();
       if (labels[i].innerHTML == questions[key].answer) {
@@ -219,7 +219,7 @@ function submitBtn() {
     for (let i = 0; i < inputs.length; i++) {
       if (inputs[i].value == labels[i].innerHTML) {
         if (inputs[i].checked) {
-          //alert("Correct");
+          alert("Correct");
           //console.log(key);
           counter++;
           key++;
@@ -227,7 +227,7 @@ function submitBtn() {
           //console.log(counter);
           break;
         } else {
-          //alert("Wrong Answer");
+          alert("Wrong Answer");
           counter += 0;
           key++;
           allQuestions();
