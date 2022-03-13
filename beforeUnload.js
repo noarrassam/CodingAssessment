@@ -1,15 +1,19 @@
-var rld = false;
-$(window).bind("beforeunload", function (e) {
-  e.preventDefault();
-  if (!rld) {
-    console.log(rld);
-    setTimeout(function () {
+function beforeunload() {
+  var rld = false;
+  $(window).bind("beforeunload", function (e) {
+    e.preventDefault();
+    if (!rld) {
+      console.log(rld);
       setTimeout(function () {
-        $(location).attr("href", "./index.html");
-      }, 1000);
+        setTimeout(function () {
+          $(location).attr("href", "./index.html");
+        }, 1000);
+        rld = true;
+      }, 1);
       rld = true;
-    }, 1);
-    rld = true;
-  }
-  return "are you sure";
-});
+    }
+    return "are you sure";
+  });
+}
+
+export { beforeunload };

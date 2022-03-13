@@ -1,4 +1,5 @@
 import { questions } from "./questions.js";
+//import { beforeunload } from "./beforeUnload.js";
 
 var entry = document.getElementById("questionParagraph");
 var rdo = document.getElementById("questionDiv");
@@ -126,10 +127,16 @@ function initScore() {
     if (key && value) {
       localStorage.setItem(key, value);
       location.reload();
+      location.href = "./index.html";
     }
-    //console.log(key);
-    //console.log(value);
+    console.log(key);
+    console.log(value);
   });
+  for (let i = 0; i < localStorage.length; i++) {
+    let key = localStorage.key(i);
+    let val = localStorage.getItem(key);
+    AllOutput.innerHTML += `${key}: ${val}<br />`;
+  }
 }
 
 function allQuestions() {
@@ -173,7 +180,7 @@ function submitBtn() {
     for (let i = 0; i < inputs.length; i++) {
       if (inputs[i].value == labels[i].innerHTML) {
         if (inputs[i].checked) {
-          alert("Correct");
+          //alert("Correct");
           //console.log(key);
           counter++;
           key++;
@@ -181,7 +188,7 @@ function submitBtn() {
           //console.log(counter);
           break;
         } else {
-          alert("Wrong Answer");
+          //alert("Wrong Answer");
           counter += 0;
           key++;
           allQuestions();
