@@ -1,4 +1,4 @@
-function beforeunload() {
+function beforeUnload() {
   var rld = false;
   $(window).bind("beforeunload", function (e) {
     e.preventDefault();
@@ -16,6 +16,6 @@ function beforeunload() {
   });
 }
 
-beforeunload();
+beforeUnload();
 
-export { beforeunload };
+export { beforeUnload };

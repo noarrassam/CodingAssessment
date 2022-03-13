@@ -1,5 +1,5 @@
 import { questions } from "./questions.js";
-import { beforeunload } from "./beforeUnload.js";
+import { beforeUnload } from "./beforeUnload.js";
 
 var entry = document.getElementById("questionParagraph");
 var rdo = document.getElementById("questionDiv");
@@ -120,17 +120,17 @@ function initScore() {
   const btnInsert = document.getElementById("btnInsert");
   const AllOutput = document.getElementById("output");
 
-  btnInsert.addEventListener("click", function () {
+  btnInsert.addEventListener("click", function (e) {
+    e.preventDefault();
     const key = initials.value;
     const value = counter;
-
     if (key && value) {
       localStorage.setItem(key, value);
-      location.reload();
+      //location.reload();
       location.href = "./index.html";
     }
-    console.log(key);
-    console.log(value);
+    //console.log(key);
+    //console.log(value);
   });
   for (let i = 0; i < localStorage.length; i++) {
     let key = localStorage.key(i);
@@ -141,23 +141,20 @@ function initScore() {
 
 function allQuestions() {
   let question = questions[key];
-
   if (question) {
-    if (beforeunload) {
-      for (var i = 0; i < inputs.length; i++) {
-        inputs[i].value = "";
-        inputs[i].id = "rd";
-        let id = document.getElementById("rd");
-        id.checked = true;
-        //console.log(inputs[i]);
-        //console.log(key);
-        labels[i].innerHTML = questions[key].choices[i];
-        //console.log(questions[key].choices[i]);
-        entry.innerHTML = questions[key].title;
-        //clearRdoButton();
-        if (labels[i].innerHTML == questions[key].answer) {
-          inputs[i].value = questions[key].answer;
-        }
+    for (var i = 0; i < inputs.length; i++) {
+      inputs[i].value = "";
+      inputs[i].id = "rd";
+      let id = document.getElementById("rd");
+      id.checked = true;
+      //console.log(inputs[i]);
+      //console.log(key);
+      labels[i].innerHTML = questions[key].choices[i];
+      //console.log(questions[key].choices[i]);
+      entry.innerHTML = questions[key].title;
+      //clearRdoButton();
+      if (labels[i].innerHTML == questions[key].answer) {
+        inputs[i].value = questions[key].answer;
       }
     }
   } else {
