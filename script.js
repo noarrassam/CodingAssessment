@@ -6,9 +6,7 @@ var inputs = rdo.getElementsByTagName("input");
 var labels = rdo.getElementsByTagName("label");
 var seconds = document.getElementById("demo");
 var inputElements = document.querySelectorAll("input");
-//var labelElements = document.querySelectorAll("label");
 
-//var arrays = [];
 var counter = 0;
 var key = 0;
 var count = 60;
@@ -132,12 +130,6 @@ function initScore() {
     //console.log(key);
     //console.log(value);
   });
-
-  for (let i = 0; i < localStorage.length; i++) {
-    let key = localStorage.key(i);
-    let val = localStorage.getItem(key);
-    AllOutput.innerHTML += `${key}: ${val}<br />`;
-  }
 }
 
 function allQuestions() {
@@ -162,44 +154,6 @@ function allQuestions() {
     clearInterval(intrvl);
     initScore();
   }
-}
-
-function startButton() {
-  let para = document.createElement("p");
-  para.id = "para";
-  para.innerHTML =
-    "Start the Quiz" + "<br />" + "You have 1 minute to answer 10 MCQs";
-  document.body.appendChild(para);
-
-  let start = document.createElement("input");
-  start.type = "submit";
-  start.id = "start";
-  start.value = "Start";
-  document.body.appendChild(start);
-  let session = document.getElementById("session");
-
-  for (var i = 0; i < inputElements.length; i++) {
-    if (inputElements.length > 0) {
-      inputElements[i].style.visibility = "hidden";
-    }
-  }
-
-  session.style.visibility = "hidden";
-
-  let startButton = document.getElementById("start");
-  startButton.addEventListener("click", function () {
-    for (var i = 0; i < inputElements.length; i++) {
-      if (inputElements.length > 0) {
-        inputElements[i].style.visibility = "visible";
-      }
-    }
-    session.style.visibility = "visible";
-    para.remove();
-    start.remove();
-    allQuestions();
-    counterTime();
-    submitBtn();
-  });
 }
 
 function clearRdoButton() {
@@ -238,4 +192,6 @@ function submitBtn() {
   });
 }
 
-startButton();
+allQuestions();
+counterTime();
+submitBtn();
