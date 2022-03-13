@@ -16,6 +16,4 @@ function beforeUnload() {
   });
 }
 
-beforeUnload();
-
 export { beforeUnload };

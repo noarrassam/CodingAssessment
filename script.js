@@ -180,7 +180,7 @@ function submitBtn() {
     for (let i = 0; i < inputs.length; i++) {
       if (inputs[i].value == labels[i].innerHTML) {
         if (inputs[i].checked) {
-          //alert("Correct");
+          alert("Correct");
           //console.log(key);
           counter++;
           key++;
@@ -188,7 +188,7 @@ function submitBtn() {
           //console.log(counter);
           break;
         } else {
-          //alert("Wrong Answer");
+          alert("Wrong Answer");
           counter += 0;
           key++;
           allQuestions();
@@ -202,3 +202,4 @@ function submitBtn() {
 allQuestions();
 counterTime();
 submitBtn();
+beforeUnload();
