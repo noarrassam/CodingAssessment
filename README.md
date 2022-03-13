@@ -19,6 +19,7 @@ It is an MCQs Quiz app that allows users to take a JS Quiz within a specified pe
 ## **Start Assessment**
 
 ![![Start]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/1.png)
+![![Start]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/7.png)
 
 ## **MCQs**
 
@@ -31,6 +32,10 @@ It is an MCQs Quiz app that allows users to take a JS Quiz within a specified pe
 ## **Correct Answer Alert**
 
 ![![Portfolio]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/4.png)
+
+## **Alert Message**
+
+![![Portfolio]()](https://github.com/noarrassam/CodingAssessment/blob/master/images/6.png)
 
 ## **Final Score**
 
