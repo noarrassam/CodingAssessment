@@ -14,6 +14,8 @@ It is an MCQs Quiz app that allows users to take a JS Quiz within a specified pe
 
 - JavaScript
 
+- JQuery
+
 - Localstorage
 
 ## **Start Assessment**
