@@ -1,5 +1,5 @@
 import { questions } from "./questions.js";
-//import { beforeunload } from "./beforeUnload.js";
+import { beforeunload } from "./beforeUnload.js";
 
 var entry = document.getElementById("questionParagraph");
 var rdo = document.getElementById("questionDiv");
@@ -141,20 +141,23 @@ function initScore() {
 
 function allQuestions() {
   let question = questions[key];
+
   if (question) {
-    for (var i = 0; i < inputs.length; i++) {
-      inputs[i].value = "";
-      inputs[i].id = "rd";
-      let id = document.getElementById("rd");
-      id.checked = true;
-      //console.log(inputs[i]);
-      //console.log(key);
-      labels[i].innerHTML = questions[key].choices[i];
-      //console.log(questions[key].choices[i]);
-      entry.innerHTML = questions[key].title;
-      clearRdoButton();
-      if (labels[i].innerHTML == questions[key].answer) {
-        inputs[i].value = questions[key].answer;
+    if (beforeunload) {
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].value = "";
+        inputs[i].id = "rd";
+        let id = document.getElementById("rd");
+        id.checked = true;
+        //console.log(inputs[i]);
+        //console.log(key);
+        labels[i].innerHTML = questions[key].choices[i];
+        //console.log(questions[key].choices[i]);
+        entry.innerHTML = questions[key].title;
+        //clearRdoButton();
+        if (labels[i].innerHTML == questions[key].answer) {
+          inputs[i].value = questions[key].answer;
+        }
       }
     }
   } else {
@@ -163,10 +166,10 @@ function allQuestions() {
   }
 }
 
-function clearRdoButton() {
-  var ele = document.getElementsByName("rdos");
-  for (var i = 0; i < ele.length; i++) ele[i].checked = false;
-}
+// function clearRdoButton() {
+//   var ele = document.getElementsByName("rdos");
+//   for (var i = 0; i < ele.length; i++) ele[i].checked = false;
+// }
 
 function submitBtn() {
   var submitBtn = document.createElement("input");
